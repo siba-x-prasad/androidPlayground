@@ -1,5 +1,7 @@
 package dev.android.play.daggerhilt.components
 
-class Bar {
+import javax.inject.Inject
+
+class Bar @Inject constructor() {
 
 }

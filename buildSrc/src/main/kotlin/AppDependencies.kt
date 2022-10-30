@@ -123,10 +123,20 @@ object AppDependencies {
     val datastore = "androidx.datastore:datastore-preferences:1.0.0"
     val datastoreProto = "androidx.datastore:datastore:1.0.0"
 
-    // room database
-    val roomDatabase = "androidx.room:room-runtime:${Versions.roomVerions}"
 
-    // work manager
+    /******************    ROOM DATABASE     ********************/
+    const val roomDatabaseRuntime =  "androidx.room:room-runtime:${Versions.roomVerion}"
+    // annotationProcessor
+    const val roomDatabaseCompiler =  "androidx.room:room-compiler:${Versions.roomVerion}"
+    // To use Kotlin annotation processing tool (kapt)
+    //    kapt
+    const val kaptRoomCompiler =  "androidx.room:room-compiler:${Versions.roomVerion}"
+    // To use Kotlin Symbol Processing (KSP)
+    // ksp
+    const val kspRoomCompiler =  "androidx.room:room-compiler:${Versions.roomVerion}"
+
+
+    /********************   WORK MANAGER   *********************/
     // https://developer.android.com/jetpack/androidx/releases/work
     val workManager = "androidx.work:work-runtime-ktx:${Versions.workManager}"
     val composeUITooling = "androidx.compose.ui:ui-tooling:${Versions.composeVersion}"
@@ -146,10 +156,10 @@ object AppDependencies {
 
     /*********************** IMAGE LOADING ****************/
     const val picasso = "com.squareup.picasso:picasso:2.5.2"
-    val glide = "com.github.bumptech.glide:glide:4.12.0"
+    const val glide = "com.github.bumptech.glide:glide:4.12.0"
     // Glide v4 uses this new annotation processor -- see https://bumptech.github.io/glide/doc/generatedapi.html
     // annotationProcessor
-    val glideImpl = "com.github.bumptech.glide:compiler:4.12.0"
+    const val glideImpl = "com.github.bumptech.glide:compiler:4.12.0"
 
     // coroutines
     const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.coroutine}"

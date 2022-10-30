@@ -1,3 +1,5 @@
+package dev.android.play.app
+
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 

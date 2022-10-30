@@ -4,18 +4,17 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import dev.android.play.daggerhilt.api.TvShowApiService
 import dev.android.play.daggerhilt.network.AuthInterceptor
 import dev.android.play.daggerhilt.network.OtherInterceptor
+import dev.android.play.moviedb.api.RestConfig
 import okhttp3.OkHttpClient
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import java.util.concurrent.TimeUnit
-import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
+
+//    @Provides
+//    fun provideBaseUrl() = RestConfig.API_SERVER
 
     @AuthInterceptorOkHttpClient
     @Provides
@@ -37,12 +36,37 @@ object NetworkModule {
             .build()
     }
 
+/*    @Singleton
+    @Provides
+    fun provideOkHttpClient() = if (BuildConfig.DEBUG) {
+        val loggingInterceptor = HttpLoggingInterceptor()
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+        OkHttpClient.Builder()
+            .addInterceptor(loggingInterceptor)
+            .build()
+    } else {
+        OkHttpClient
+            .Builder()
+            .build()
+    }
+
+    @Singleton
+    @Provides
+    fun provideRetrofit(okHttpClient: OkHttpClient, BASE_URL: String): Retrofit = Retrofit.Builder()
+        .addConverterFactory(GsonConverterFactory.create())
+        .baseUrl(BASE_URL)
+        .client(okHttpClient)
+        .build()
+
 
     @Singleton
     @Provides
     fun provideHttpClient(): OkHttpClient {
+        val loggingInterceptor = HttpLoggingInterceptor()
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
         return OkHttpClient
             .Builder()
+            .addInterceptor(loggingInterceptor)
             .readTimeout(15, TimeUnit.SECONDS)
             .connectTimeout(15, TimeUnit.SECONDS)
             .build()
@@ -53,7 +77,9 @@ object NetworkModule {
     fun provideConverterFactory(): GsonConverterFactory =
         GsonConverterFactory.create()
 
-    @Singleton
+ */
+
+/*    @Singleton
     @Provides
     fun provideRetrofit(
         okHttpClient: OkHttpClient,
@@ -68,6 +94,15 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideCurrencyService(retrofit: Retrofit): TvShowApiService =
+    fun provideTvShowAPiService(retrofit: Retrofit): TvShowApiService =
         retrofit.create(TvShowApiService::class.java)
+
+    @Provides
+    @Singleton
+    fun providePopularApiServiceHelper(apiHelper: PopularTvApiServiceImpl):
+            PopularTvApiServiceHelper = apiHelper
+
+
+ */
+
 }

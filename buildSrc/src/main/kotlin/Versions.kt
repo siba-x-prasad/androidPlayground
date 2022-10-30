@@ -25,7 +25,7 @@ object Versions {
     // compose version
     const val composeVersion = "1.2.0"
     // room database
-    const val roomVerions= "2.4.2"
+    const val roomVerion= "2.4.3"
     const val coroutine= "1.3.7"
     const val workManager= "2.7.1"
     val paging = "3.1.1"

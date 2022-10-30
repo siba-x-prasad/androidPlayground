@@ -15,8 +15,4 @@ abstract class AnalyticsModule {
     abstract fun bindAnalyticsService(
         analyticsServiceImpl: AnalyticsServiceImpl
     ): AnalyticsService
-
-
-
-
 }

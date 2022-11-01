@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/database_nav_graph"
+    app:startDestination="@id/addUserFragment">
+
+    <fragment
+        android:id="@+id/addUserFragment"
+        android:name="dev.android.play.roomdatabase.ui.add.AddUserFragment"
+        android:label="@string/hello_first_fragment"
+        tools:layout="@layout/fragment_add_user">
+
+        <action
+            android:id="@+id/action_addUserFragment_to_ShowUserFragment"
+            app:destination="@id/showUserFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/showUserFragment"
+        android:name="dev.android.play.roomdatabase.ui.show.ShowUserFragment"
+        android:label="@string/hello_second_fragment"
+        tools:layout="@layout/fragment_show_user">
+
+    </fragment>
+
+</navigation>

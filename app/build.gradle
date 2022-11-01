@@ -5,6 +5,7 @@ plugins {
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
     id 'com.google.gms.google-services'
+    id "com.google.protobuf"
 }
 
 android {
@@ -102,14 +103,34 @@ dependencies {
 
     implementation AppDependencies.datastore
     implementation AppDependencies.datastoreProto
+    implementation  "com.google.protobuf:protobuf-javalite:3.18.0"
 
     testImplementation 'org.mockito:mockito-core:4.7.0'
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.0"
 
     // FCM
     implementation 'com.google.firebase:firebase-bom:31.0.2'
-    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-analytics:21.2.0'
 }
 kapt {
     correctErrorTypes true
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.14.0"
+    }
+
+    // Generates the java Protobuf-lite code for the Protobufs in this project. See
+    // https://github.com/google/protobuf-gradle-plugin#customizing-protobuf-compilation
+    // for more information.
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java {
+                    option 'lite'
+                }
+            }
+        }
+    }
 }

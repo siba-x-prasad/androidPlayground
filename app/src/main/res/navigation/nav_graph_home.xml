@@ -132,12 +132,7 @@
 
     <fragment
         android:id="@+id/fragmentDatastore"
-        android:name="dev.android.play.navigation.NavFragmentD"
-        android:label="fragment_nav_d"
-        tools:layout="@layout/fragment_nav_d">
-        <argument
-            android:name="others_to_d"
-            android:defaultValue="others_to_d"
-            app:argType="string" />
-    </fragment>
+        android:name="dev.android.play.datastore.DataStoreFragment"
+        android:label="Datastore Fragment"
+        tools:layout="@layout/fragment_data_store" />
 </navigation>

@@ -35,8 +35,8 @@ class ActivityResultA : AppCompatActivity() {
         supportFragmentManager.beginTransaction().add(R.id.fragmentContainer, ResultFragment())
             .commit()
 
-        val activityLauncher: AppActivityResult<Intent, ActivityResult> =
-            AppActivityResult.registerActivityForResult(this)
+//        val activityLauncher: AppActivityResult<Intent, ActivityResult> =
+//            AppActivityResult.registerActivityForResult(this)
 
         buttonStartActivityResult.setOnClickListener {
             val intent = Intent(this, ActivityResultB::class.java)

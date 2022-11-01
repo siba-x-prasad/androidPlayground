@@ -51,8 +51,8 @@ class RegisterViewModel @Inject constructor() : ObservableViewModel() {
         }
 
         Log.i(
-            "RegisterViewModel",
-            "${emailObservable.get()} ${nameObservable.get()} ${mobileObservable.get()} "
+            "Datastore",
+            "${emailObservable.get()} ${emailObservable.get()} ${passwordObservable.get()} "
         )
     }
 

@@ -11,7 +11,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        redirect(R.id.coroutineFragment)
+        redirect(R.id.fragmentDatastore)
     }
 
 

@@ -63,24 +63,24 @@ class AppActivityResult<Input, Result> private constructor(
          * Same as [.registerForActivityResult] except
          * the last argument is set to `null`.
          */
-        fun <Input, Result> registerForActivityResult(
-            caller: ActivityResultContracts.RequestPermission,
-            contract: (Boolean) -> Unit
-        ): AppActivityResult<Input, Result> {
-            return registerForActivityResult(caller, contract, null)
-        }
+//        fun <Input, Result> registerForActivityResult(
+//            caller: ActivityResultContracts.RequestPermission,
+//            contract: ActivityResultContracts.StartActivityForResult
+//        ): AppActivityResult<Input, Result> {
+//            return registerForActivityResult(caller, contract, null)
+//        }
 
         /**
          * Specialised method for launching new activities.
          */
-        fun registerActivityForResult(
-            caller: ActivityResultCaller
-        ): AppActivityResult<Intent, ActivityResult> {
-            return registerForActivityResult(
-                caller,
-                ActivityResultContracts.StartActivityForResult()
-            )
-        }
+//        fun registerActivityForResult(
+//            caller: ActivityResultCaller
+//        ): AppActivityResult<Intent, ActivityResult> {
+//            return registerForActivityResult(
+//                caller,
+//                ActivityResultContracts.StartActivityForResult()
+//            )
+//        }
     }
 
     init {

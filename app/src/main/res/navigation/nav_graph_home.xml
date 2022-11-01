@@ -135,4 +135,12 @@
         android:name="dev.android.play.datastore.DataStoreFragment"
         android:label="Datastore Fragment"
         tools:layout="@layout/fragment_data_store" />
+
+    <fragment
+        android:id="@+id/fragmentService"
+        android:name="dev.android.play.background.ServiceFragment"
+        android:label="Service Fragment"
+        tools:layout="@layout/fragment_service" />
+
+
 </navigation>

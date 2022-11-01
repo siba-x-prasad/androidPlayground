@@ -16,9 +16,15 @@ class LoginViewModel @Inject constructor() : ObservableViewModel() {
 
     @Bindable
     var emailObservable = ObservableField<String>("")
+    private var email: String?
+        get() = emailObservable.get()
+        set(value) = emailObservable.set(value)
 
     @Bindable
     var passwordObservable = ObservableField<String>("")
+    private var password: String?
+        get() = passwordObservable.get()
+        set(value) = passwordObservable.set(value)
 
     fun onLoginClick(view: View, data: String) {
         Log.i("LoginViewModel", data)

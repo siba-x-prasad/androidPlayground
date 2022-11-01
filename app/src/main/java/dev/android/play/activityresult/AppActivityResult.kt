@@ -64,8 +64,8 @@ class AppActivityResult<Input, Result> private constructor(
          * the last argument is set to `null`.
          */
         fun <Input, Result> registerForActivityResult(
-            caller: ActivityResultCaller,
-            contract: ActivityResultContract<Input, Result>
+            caller: ActivityResultContracts.RequestPermission,
+            contract: (Boolean) -> Unit
         ): AppActivityResult<Input, Result> {
             return registerForActivityResult(caller, contract, null)
         }

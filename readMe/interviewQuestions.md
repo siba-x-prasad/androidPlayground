@@ -2,11 +2,11 @@
 ## Java ☕️
 - What is the diff between encapsulation & abstraction (practical example) — Check here
 - HashMaps vs HashTables — Check here
-- When to use array & ArrayList — Check here
-- What is the volatile keyword — Check here
-- What is the transient keyword — Check here
-- What is a diff between a string buffer & string builder — Check here
-- Why is string immutable — Check here
+- When to use array & ArrayList
+- What is the volatile keyword
+- What is the transient keyword
+- What is a diff between a string buffer & string builder
+- Why is string immutable
 - Explain multithreading. How two threads pass messages internally — Handler
 - class A -> extends class B, implements interface C. Both have the same method fun add() {}, Which one will be implemented in class A?
 - Try yourself

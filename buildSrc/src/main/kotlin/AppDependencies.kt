@@ -120,8 +120,8 @@ object AppDependencies {
     }
 
     /****************  DATA STORAGE  ******************/
-    val datastore = "androidx.datastore:datastore-preferences:1.0.0"
-    val datastoreProto = "androidx.datastore:datastore:1.0.0"
+    const val datastore = "androidx.datastore:datastore-preferences:1.0.0"
+    const val datastoreProto = "androidx.datastore:datastore:1.0.0"
 
 
     /******************    ROOM DATABASE     ********************/

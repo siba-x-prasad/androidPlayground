@@ -22,6 +22,14 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/fcmFragment"
+        android:name="dev.android.play.fcm.FcmFragment"
+        android:label="FCM fragment"
+        tools:layout="@layout/fragment_fcm">
+
+    </fragment>
+
 
     <!--    NAVIGATION EXAMPLE-->
 

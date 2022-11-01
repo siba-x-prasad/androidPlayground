@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "603394102378",
+    "project_id": "abdroid-playground",
+    "storage_bucket": "abdroid-playground.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:603394102378:android:b605f1a2ced1bab5426613",
+        "android_client_info": {
+          "package_name": "dev.android.play"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "603394102378-4du6ttrave35e5045uiucgamudletufs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv73r6xDo1-C3QYWiHfAH5teh1g7R2bFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "603394102378-4du6ttrave35e5045uiucgamudletufs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

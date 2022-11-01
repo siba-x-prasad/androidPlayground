@@ -1,0 +1,155 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="dev.android.play.datastore.DataStoreViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/datastoreRootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dimen_10dp"
+        tools:context=".app.HomeActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineCenterHorizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDataStorePrefTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Data Store Pref"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etEmailId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Email Id"
+                android:text="@={viewModel.emailObservable}"
+                app:layout_constraintTop_toBottomOf="@+id/tvDataStorePrefTitle" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Password"
+                android:inputType="textPassword"
+                android:text="@={viewModel.passwordObservable}"
+                app:layout_constraintTop_toBottomOf="@+id/etEmailId" />
+
+            <RadioGroup
+                android:id="@+id/genderRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checkedButton="@={viewModel.genderData}"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/etPassword">
+
+                <RadioButton
+                    android:id="@+id/radioMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/radioFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female" />
+
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{(view) -> viewModel.onSaveClicked(view)}"
+                android:text="Save Data"
+                app:layout_constraintTop_toBottomOf="@+id/genderRadioGroup" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnFetchData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{(view) -> viewModel.fetchData(view)}"
+                android:text="Fetch Data from Data store"
+                app:layout_constraintTop_toBottomOf="@+id/btnSave" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineCenterHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guidelineCenterHorizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Data Store Proto"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter User Name"
+                android:text="@={viewModel.userNameObservable}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/checkboxIsLoggedIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.isLoggedIn}"
+                android:onCheckedChanged="@{viewModel::onLoggedInStatusChanged}"
+                android:orientation="horizontal"
+                android:text="Is Logged In"
+                app:layout_constraintTop_toBottomOf="@+id/etUserName" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSaveProto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{(view) -> viewModel.onSaveProtoClicked(view)}"
+                android:text="Save Proto Data"
+                app:layout_constraintTop_toBottomOf="@+id/checkboxIsLoggedIn" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnFetchProtoData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{(view) -> viewModel.fetchProtoData(view)}"
+                android:text="Get Proto Data"
+                app:layout_constraintTop_toBottomOf="@+id/btnSaveProto" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

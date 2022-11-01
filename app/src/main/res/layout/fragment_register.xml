@@ -1,0 +1,99 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="dev.android.play.account.register.RegisterViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dimen_10dp"
+        tools:context=".ui.MeteorActivity">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Name"
+            android:text="@={viewModel.nameObservable}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Mobile"
+            android:inputType="number"
+            android:text="@={viewModel.mobileObservable}"
+            app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etEmailId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Email Id"
+            android:text="@={viewModel.emailObservable}"
+            app:layout_constraintTop_toBottomOf="@+id/etMobile" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Password"
+            android:inputType="textPassword"
+            android:text="@={viewModel.passwordObservable}"
+            app:layout_constraintTop_toBottomOf="@+id/etEmailId" />
+
+        <RadioGroup
+            android:id="@+id/genderRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@={viewModel.genderData}"
+            app:layout_constraintTop_toBottomOf="@+id/etPassword">
+
+            <RadioButton
+                android:id="@+id/radioMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/radioFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female" />
+
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> viewModel.onRegisterClick(view, `Register` )}"
+            android:text="Register"
+            app:layout_constraintTop_toBottomOf="@+id/genderRadioGroup" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin"
+            style="@android:style/Widget.Material.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> viewModel.onLoginClick(view)}"
+            android:text="Login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/genderRadioGroup"
+            tools:layout_editor_absoluteX="10dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

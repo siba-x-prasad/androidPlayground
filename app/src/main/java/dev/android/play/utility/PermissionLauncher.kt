@@ -3,7 +3,7 @@ package dev.android.play.utility
 import android.os.Build
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
-import dev.android.play.activityresult.AppActivityResult.Companion.registerForActivityResult
+import dev.android.play.miscellaneous.activityresult.AppActivityResult.Companion.registerForActivityResult
 
 object PermissionLauncher {
 //    // Declare the launcher at the top of your Activity/Fragment:

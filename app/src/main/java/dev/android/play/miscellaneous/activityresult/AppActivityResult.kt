@@ -1,4 +1,4 @@
-package dev.android.play.activityresult
+package dev.android.play.miscellaneous.activityresult
 
 import android.content.Intent
 import androidx.activity.result.ActivityResult

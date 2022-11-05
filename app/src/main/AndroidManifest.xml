@@ -9,6 +9,8 @@
         tools:node="remove" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:name=".app.AndroidPlayApplication"
         android:allowBackup="true"
@@ -21,11 +23,9 @@
         android:theme="@style/Theme.AndroidPlayground"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
         <service
-            android:name=".AppIntentService"
-            android:exported="false"></service>
-        <service
-            android:name=".AppService"
+            android:name=".background.AppBindService"
             android:enabled="true"
             android:exported="true" />
 
@@ -85,14 +85,14 @@
                 android:value="" />
         </activity> <!-- ACTIVITY RESULT -->
         <activity
-            android:name=".activityresult.ActivityResultA"
+            android:name=".miscellaneous.activityresult.ActivityResultA"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activityresult.ActivityResultB"
+            android:name=".miscellaneous.activityresult.ActivityResultB"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

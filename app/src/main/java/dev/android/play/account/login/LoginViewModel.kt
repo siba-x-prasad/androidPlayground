@@ -9,6 +9,8 @@ import androidx.navigation.findNavController
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.android.play.R
 import dev.android.play.utility.ObservableViewModel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
 @HiltViewModel
@@ -28,6 +30,11 @@ class LoginViewModel @Inject constructor() : ObservableViewModel() {
 
     fun onLoginClick(view: View, data: String) {
         Log.i("LoginViewModel", data)
+        observableLoading.set(true)
+        runBlocking {
+            delay(5000)
+            observableLoading.set(false)
+        }
     }
 
     fun onRegisterClick(view: View) {

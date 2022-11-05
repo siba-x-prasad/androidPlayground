@@ -142,5 +142,18 @@
         android:label="Service Fragment"
         tools:layout="@layout/fragment_service" />
 
+    <!--OBSERVABLE COMPARISON => LiveData, Flow, StateFlow, SharedFlow-->
+
+    <fragment
+        android:id="@+id/fragmentObservableComparison"
+        android:name="dev.android.play.miscellaneous.observablecomparison.ObservableComparisonFragment"
+        android:label="Observable Comparison Fragment"
+        tools:layout="@layout/fragment_observable_comparison" />
+
+    <fragment
+        android:id="@+id/fragmentTiramisuNotification"
+        android:name="dev.android.play.miscellaneous.tiramisuNotificationPermission.TiramisuNotificationPermissionFragment"
+        android:label="TiramisuNotification Fragment"
+        tools:layout="@layout/fragment_tiramisu_notification_permission" />
 
 </navigation>

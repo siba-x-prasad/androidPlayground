@@ -21,7 +21,6 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
-import dev.android.play.databinding.FragmentTiramisuNotificationErmissionBinding
 import dev.android.play.databinding.FragmentTiramisuNotificationPermissionBinding
 
 @AndroidEntryPoint
@@ -52,7 +51,7 @@ class TiramisuNotificationPermissionFragment : Fragment(),
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentTiramisuNotificationErmissionBinding.inflate(inflater, container, false)
+        binding = FragmentTiramisuNotificationPermissionBinding.inflate(inflater, container, false)
         return binding.root
     }
 

@@ -9,9 +9,10 @@ import dev.android.play.utility.ObservableViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
-class ObservableComparisonViewModel : ObservableViewModel() {
+class ObservableComparisonViewModel @Inject constructor() : ObservableViewModel() {
 
     private val _livedata = MutableLiveData<String>("")
     var liveData: LiveData<String> = _livedata

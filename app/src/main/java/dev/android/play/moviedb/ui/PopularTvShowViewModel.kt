@@ -40,7 +40,7 @@ class PopularTvShowViewModel
 
         pageNo++
 
-        if (!networkHelper.isNetworkConnected()) {
+        if (networkHelper.isNetworkConnected()) {
             updateUiState(PopularTvNewsFlowUiState.Error("No Internet Connection"))
             return@launch
         }
@@ -54,7 +54,7 @@ class PopularTvShowViewModel
         }
     }
 
-    fun showError(error: String) {
+    private fun showError(error: String) {
         observableErrorMessage.set(error)
         uiState.apply {
             showList = false
@@ -91,7 +91,7 @@ class PopularTvShowViewModel
         _popularTvShowStateFlow.value = state
     }
 
-    fun observeDataChange() {
+    private fun observeDataChange() {
         viewModelScope.launch {
             uiData.collect {
                 when (it) {

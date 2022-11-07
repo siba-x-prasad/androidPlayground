@@ -11,9 +11,12 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        redirect(R.id.fragmentService)
+        redirect(NavigationRoutes.XML_PARSING)
     }
 
+    private fun startAppActivity() {
+//        startActivity(Intent(this@HomeActivity, MovieDBActivity::class.java))
+    }
 
     private fun redirect(destinationId: Int) {
         val navHostFragment =

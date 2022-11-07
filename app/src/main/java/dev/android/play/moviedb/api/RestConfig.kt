@@ -9,6 +9,8 @@ class RestConfig {
         const val API_SERVER = "https://api.themoviedb.org/3/"
         const val BASE_IMAGE_URL = "http://image.tmdb.org/t/p/w500"
 
+        // xml parsing
+        const val SOAP_API_SERVER = "https://howtodoinjava.com/"
+        const val SOAP_API_SERVER1 = "https://trends.google.com/trends/trendingsearches/daily/"
     }
-
 }

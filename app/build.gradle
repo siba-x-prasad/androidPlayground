@@ -90,6 +90,11 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+    implementation('com.squareup.retrofit2:converter-simplexml:2.9.0') {
+        exclude module: 'stax'
+        exclude module: 'stax-api'
+        exclude module: 'xpp3'
+    }
 
     // Room database
     implementation AppDependencies.roomDatabaseRuntime
@@ -114,6 +119,8 @@ dependencies {
     // FCM
     implementation 'com.google.firebase:firebase-bom:31.0.2'
     implementation 'com.google.firebase:firebase-analytics:21.2.0'
+    implementation("androidx.core:core-splashscreen:1.0.0")
+
 }
 kapt {
     correctErrorTypes true

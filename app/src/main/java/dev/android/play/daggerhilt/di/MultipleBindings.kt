@@ -9,3 +9,7 @@ annotation class AuthInterceptorOkHttpClient
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
 annotation class OtherInterceptorOkHttpClient
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class XmlInterceptorOkHttpClient

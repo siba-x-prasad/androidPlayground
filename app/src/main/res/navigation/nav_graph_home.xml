@@ -156,4 +156,18 @@
         android:label="TiramisuNotification Fragment"
         tools:layout="@layout/fragment_tiramisu_notification_permission" />
 
+    <!--XML PARSING-->
+    <fragment
+        android:id="@+id/fragmentXmlParsing"
+        android:name="dev.android.play.xmlparsing.ui.XmlParsingFragment"
+        android:label="Xml Parsing Fragment"
+        tools:layout="@layout/fragment_xml_parsing" />
+
+    <!--Movie Database-->
+    <fragment
+        android:id="@+id/fragmentMovieDatabase"
+        android:name="dev.android.play.moviedb.ui.PopularTvShowFragment"
+        android:label="Movie Db Fragment"
+        tools:layout="@layout/fragment_popular_tvshow" />
+
 </navigation>

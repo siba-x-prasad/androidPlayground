@@ -24,6 +24,27 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
+        <activity
+            android:name=".app.SplashScreenActivity"
+            android:exported="true"
+            android:theme="@style/SplashScreenTheme">
+
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity> <!-- HANDLE BACKPRESS -->
+
+        <activity
+            android:name=".app.HomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <service
             android:name=".background.AppBindService"
             android:enabled="true"
@@ -64,19 +85,9 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".app.HomeActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <!-- HANDLE BACKPRESS -->
 
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity> <!-- HANDLE BACKPRESS -->
         <activity
             android:name=".handleBackpress.BackPressActivity"
             android:exported="false">
@@ -107,13 +118,6 @@
         </activity> <!-- HANDLE CRASH IN APP -->
         <activity
             android:name=".customErrorHandling.CrashActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity> <!-- MOVIE DB -->
-        <activity
-            android:name=".moviedb.MovieDBActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

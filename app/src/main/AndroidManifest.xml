@@ -8,7 +8,6 @@
         android:name="android.permission.POST_NOTIFICATIONS"
         tools:node="remove" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
@@ -25,16 +24,59 @@
         tools:targetApi="31">
 
         <activity
+            android:name=".deeplinking.DeepLinkingActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="www.spcart.com"
+                    android:pathPrefix="/product" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="www.spcart.com"
+                    android:pathPrefix="/mycart" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".deeplinking.AppLinkingActivity"
+            android:exported="true">
+
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="www.swasitech.com"
+                    android:pathPattern="/product" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".app.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/SplashScreenTheme">
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity> <!-- HANDLE BACKPRESS -->
-
         <activity
             android:name=".app.HomeActivity"
             android:exported="true">
@@ -84,10 +126,7 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-        <!-- HANDLE BACKPRESS -->
-
+        </activity> <!-- HANDLE BACKPRESS -->
         <activity
             android:name=".handleBackpress.BackPressActivity"
             android:exported="false">

@@ -64,7 +64,7 @@ class ServiceViewModel @Inject constructor() : ObservableViewModel() {
                 .setInputData(data.build())
                 .setBackoffCriteria(
                     BackoffPolicy.LINEAR,
-                    PeriodicWorkRequest.MIN_BACKOFF_MILLIS,
+                    PeriodicWorkRequest.MIN_PERIODIC_FLEX_MILLIS,
                     TimeUnit.MILLISECONDS
                 )
 //                .setConstraints(constraint.build())
@@ -76,7 +76,7 @@ class ServiceViewModel @Inject constructor() : ObservableViewModel() {
                 .setConstraints(constraints) // setting a backoff on case the work needs to retry
                 .setBackoffCriteria(
                     BackoffPolicy.LINEAR,
-                    PeriodicWorkRequest.MIN_BACKOFF_MILLIS,
+                    PeriodicWorkRequest.MIN_PERIODIC_FLEX_MILLIS,
                     TimeUnit.MILLISECONDS
                 )
                 .build()

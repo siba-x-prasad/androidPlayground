@@ -1,0 +1,81 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="dev.android.play.background.ServiceViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/beerRootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dimen_10dp"
+        tools:context=".ui.MeteorActivity">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnForeground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> viewModel.onStartForegroundService(view )}"
+            android:text="Start Foreground Service"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWork"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Work Manager"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/guidelineHorizontal" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Email Id"
+            android:text="@={viewModel.nameObservable}"
+            app:layout_constraintTop_toBottomOf="@+id/tvWork" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Mobile"
+            android:text="@={viewModel.mobileObservable}"
+            app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnworkManager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> viewModel.startWorkManager(view)}"
+            android:text="Start Work Manager"
+            app:layout_constraintTop_toBottomOf="@+id/etMobile" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnWorkManagerData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> viewModel.getDataSavedUsingWOrkManager(view)}"
+            android:text="Get Data Work Manager Saved"
+            app:layout_constraintTop_toBottomOf="@+id/btnworkManager" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

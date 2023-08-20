@@ -26,7 +26,7 @@ object Version {
 
     // libs
     const val coreKtx = "1.8.0"
-    const val appcompat = "1.4.2"
+    const val appcompat = "1.6.1"
     const val androidMaterial = "1.6.1"
     const val constraintLayout = "2.1.4"
     const val lifecycle_version = "2.4.0"
@@ -45,9 +45,24 @@ object Version {
     const val coroutine= "1.3.7"
     const val workManager= "2.7.1"
     val paging = "3.1.1"
+
+    const val activity = "1.7.2"
 }
 
 object AppDependencies {
+
+    // Activity
+    // Java language implementation
+    const val activity = "androidx.activity:activity:${Version.activity}"
+    const val activityKtx = "androidx.activity:activity-ktx:${Version.activity}"
+    // ads
+    const val adsIdentifier = "androidx.ads:ads-identifier:1.0.0-alpha05"
+    const val guava = "com.google.guava:guava:28.0-android"
+    // annotation
+    const val annotation = "androidx.annotation:annotation:1.6.0"
+    // To use the Java-compatible @Experimental API annotation
+    const val annotationExperimental = "androidx.annotation:annotation-experimental:1.3.1"
+
 
     /************  BASIC DEPENDENCIES ***************/
     const val coreKtx = "androidx.core:core-ktx:${Version.coreKtx}"

@@ -59,6 +59,8 @@ android {
 
 dependencies {
 
+    implementation(libs.timber)
+
     implementation AppDependencies.coreKtx
     implementation AppDependencies.androidMaterial
     implementation AppDependencies.constraintLayout

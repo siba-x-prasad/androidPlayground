@@ -1,29 +1,3 @@
 <resources>
     <string name="app_name">AndroidPlayground</string>
-
-    <string name="movie_db_app">Movie DB App</string>
-    <string name="movie_db_api_list">https://developers.themoviedb.org/3/getting-started/introduction</string>
-    <string name="movie_db_api">b514cc24baa3a0a320ba55545af3229b</string>
-    <string name="movie_db_url">https://api.themoviedb.org/3/movie/550?api_key=b514cc24baa3a0a320ba55545af3229b</string>
-    <string name="movie_db_link">https://www.themoviedb.org/settings/api</string>
-    <string name="movie_db_imagepath">http://image.tmdb.org/t/p/w500/logo_path</string>
-
-
-    <string name="title_activity_list">ListActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="add_user_fragment_label">Add User Fragment</string>
-    <string name="show_user_fragment_label">Show User Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="enter_input">Enter Input</string>
-    <string name="set_result">Set Result</string>
-    <string name="start_activity_result">Start Activity For Result</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="nav_first_fragment">First Fragment</string>
-    <string name="tvshow_Desc">Tv Show Description</string>
-    <string name="msg_token_fmt">Message Token Format</string>
 </resources>

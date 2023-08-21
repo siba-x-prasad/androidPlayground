@@ -58,9 +58,10 @@ android {
 }
 
 dependencies {
-
-    implementation(libs.timber)
-
+    implementation project(path: ':feature:account')
+    implementation project(path: ':feature:home')
+    implementation project(path: ':feature:profile')
+    implementation(libs.bundles.compose)
     implementation AppDependencies.coreKtx
     implementation AppDependencies.androidMaterial
     implementation AppDependencies.constraintLayout

@@ -10,7 +10,6 @@ object AppConfig {
     const val dimension = "environment"
 }
 
-
 object Releases {
     val versionCode = 1
     val versionName = "1.0"
@@ -20,4 +19,11 @@ object DefaultConfig {
     val minSdk = 24
     val targetSdk = 29
     val compileSdk = 29
+}
+
+object AppModules {
+    const val base = ":core:base"
+    const val featureAccount = ":feature:account"
+    const val featureHome = ":feature:home"
+    const val featureProfile = ":feature:profile"
 }

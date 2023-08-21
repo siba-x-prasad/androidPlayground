@@ -196,7 +196,7 @@ object AppDependencies {
 }
 
 //util functions for adding the different type dependencies from build.gradle file
-fun DependencyHandler.kapt(list: List<String>) {
+fun DependencyHandler.kapt(list: String) {
     list.forEach { dependency ->
         add("kapt", dependency)
     }

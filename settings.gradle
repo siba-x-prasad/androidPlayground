@@ -14,9 +14,9 @@ dependencyResolutionManagement {
 }
 rootProject.name = "AndroidPlayground"
 include ':app'
-include ':network'
-include ':mylibrary'
 include ':core:base'
 include ':feature:account'
 include ':feature:home'
 include ':feature:profile'
+include ':feature:playandroid'
+include ':core:views'

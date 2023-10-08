@@ -1,21 +1,21 @@
 [versions]
-android-gradle-plugin = "8.1.0"
+android-gradle-plugin = "8.1.1"
 appcompat = "1.6.1"
 androidx-legacy-support = "1.0.0"
 constraintlayout = "2.1.4"
-livedata-ktx = "2.6.1"
+livedata-ktx = "2.6.2"
 viewmodel-ktx = "2.5.1"
-navigation-fragment-ktx = "2.7.0"
-navigation-ui-ktx = "2.7.0"
+navigation-fragment-ktx = "2.7.4"
+navigation-ui-ktx = "2.7.4"
 kotlin = "1.8.20"
-core-ktx = "1.10.1"
-compose = "1.5.0"
-compose-navigation = "2.7.0"
-compose-activity = "1.7.2"
-compose-material3 = "1.2.0-alpha05"
+core-ktx = "1.12.0"
+compose = "1.5.3"
+compose-navigation = "2.7.4"
+compose-activity = "1.8.0"
+compose-material3 = "1.2.0-alpha09"
 compose-constraint = "1.0.1"
-compose-material = "1.5.0"
-compose-animation = "1.5.0"
+compose-material = "1.5.3"
+compose-animation = "1.5.3"
 material = "1.9.0"
 lifecycle-ktx = "2.6.1"
 navigation = "2.7.0"
@@ -26,21 +26,27 @@ timber = "5.0.1"
 work-manager = "2.9.0"
 retrofit = "2.9.0"
 okhttp = "4.10.0"
-okhttp-logging-interceptor = "4.9.3"
+okhttp-logging-interceptor = "4.10.0"
 rx-android = "2.1.1"
 rx-java = "2.2.6"
 rx-retrofit-adapter = "2.3.0"
 fcm = "23.2.1"
-coroutine = "1.6.4"
+coroutine = "1.7.1"
 datastore = "1.0.0"
 picasso = "2.8"
 glide = "4.16.0"
-dagger-hilt = "2.45"
+dagger-hilt = "2.47"
 hiltcompiler = "1.0.0"
 org-jetbrains-kotlin-android = "1.7.20"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
+fcmKtx = "23.2.1"
+forebase-bom = "31.0.2"
+firebase-analytics = "32.3.1"
+
+hilt-common = "1.0.0"
+hilt-compiler = "2.47"
 
 [libraries]
 coreKtx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
@@ -54,7 +60,6 @@ livedataKtx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.re
 viewmodelKtx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "livedata-ktx" }
 lottie = { module = "com.airbnb.android:lottie-compose", version.ref = "lottie" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
-fcm = { module = "com.google.firebase:firebase-messaging-ktx", version.ref = "fcm" }
 # room database
 roomKtx = { module = "androidx.room:room-ktx", version.ref = "room" }
 roomRuntime = { module = "androidx.room:room-runtime", version.ref = "room" }
@@ -91,6 +96,14 @@ composeAnimation = { module = "androidx.compose.animation:animation", version.re
 composeFoundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
 composeMaterial = { module = "androidx.compose.material:material", version.ref = "compose-material" }
 composeMaterial3 = { module = "androidx.compose.material3:material3", version.ref = "compose-material3" }
+# FIREBASE
+fcm = { module = "com.google.firebase:firebase-messaging-ktx", version.ref = "fcmKtx" }
+#firebaseBom = { module = "com.google.firebase:firebase-bom", version.ref = "forebase-bom" }
+#firebaseAnalytics = { module = "com.google.firebase:firebase-analytics", version.ref = "firebase-analytics" }
+# HILT
+hiltCommon = { module = "androidx.hilt:hilt-common", version.ref = "hilt-common" }
+hiltCompiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt-compiler" }
+
 # data store
 datastore = { module = "androidx.datastore:datastore-preferences-core", version.ref = "datastore" }
 datastoreProto = { module = "androidx.datastore:datastore-core", version.ref = "datastore" }
@@ -117,6 +130,15 @@ core = [
     "navigationUiKtx",
     "livedataKtx",
     "viewmodelKtx",
+    "material",
+    "constraintlayout",
+    "navigationFragmentKtx",
+    "navigationUiKtx",
+    "livedataKtx",
+    "viewmodelKtx"
+]
+firebase = [
+    "fcm"
 ]
 room = [
     "roomKtx",

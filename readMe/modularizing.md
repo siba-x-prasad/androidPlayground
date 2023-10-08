@@ -43,7 +43,6 @@
     implementation project(path: ':core')
     //Core dependencies in Build.gradle
     api project(path: ':location')
-    api project(path: ':network')
     api project(path: ':resources')
 ```
 - **api :** dependencies which are transitively exported to consumers, for compile time and runtime.

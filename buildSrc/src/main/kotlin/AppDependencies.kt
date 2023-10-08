@@ -10,7 +10,6 @@ object Modules {
     val core = ":core"
     val jetpack = ":jetpack"
     val helper = ":helper"
-    val network = ":network"
     val utility = ":utility"
 }
 

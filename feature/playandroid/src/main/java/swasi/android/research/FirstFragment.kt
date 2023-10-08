@@ -1,9 +1,11 @@
 package swasi.android.research
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
@@ -40,14 +42,19 @@ class FirstFragment : Fragment() {
                 val childView = _binding?.llContainer?.getChildAt(i - 1)
                 childView?.let {
                     val person = verifyPersonData(it, i)
-                    list.add(person)
+                    person.takeIf {
+                        it.lName.isNotEmpty() && it.fName.isNotEmpty()
+                    }?.also {
+                        list.add(person)
+                    }
                 }
             }
 
-            if (list.isEmpty()) {
-
-            } else {
+            if (list.size == 5 ) {
                 findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            } else {
+                Log.i("List Person", "$list")
+                Toast.makeText(requireActivity(), "Please enter all fields", Toast.LENGTH_LONG).show()
             }
         }
         for (i in 1..5) {
@@ -91,5 +98,3 @@ class FirstFragment : Fragment() {
     }
 
 }
-
-data class Person(val id: Int, val fName: String, val lName: String)
